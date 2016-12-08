@@ -21,3 +21,8 @@ RUN apt-get -qq update ; \
 	mkdir -p /usr/share/logstash/vendor/jruby/lib/jni/s390x-Linux ; \
 	cp /tmp/jffi-master/build/jni/libjffi-1.2.so  /usr/share/logstash/vendor/jruby/lib/jni/s390x-Linux ; \
 	rm -rf /tmp/*
+	
+COPY docker-entrypoint.sh /
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["-e", ""]

@@ -30,8 +30,8 @@ RUN rm /etc/apt/trusted.gpg && wget -qO - https://artifacts.elastic.co/GPG-KEY-e
 
 RUN echo 'deb %%LOGSTASH_DEB_REPO%% stable main' > /etc/apt/sources.list.d/logstash.list
 
-ENV LOGSTASH_VERSION %%LOGSTASH_VERSION%%
-ENV LOGSTASH_DEB_VERSION %%LOGSTASH_DEB_VERSION%%
+ENV LOGSTASH_VERSION 5.0.2
+ENV LOGSTASH_DEB_VERSION 5.0.2
 
 RUN set -x \
 	&& apt-get update \

@@ -22,6 +22,10 @@ RUN apt-get -qq update ; \
 	cp /tmp/jffi-master/build/jni/libjffi-1.2.so  /usr/share/logstash/vendor/jruby/lib/jni/s390x-Linux ; \
 	rm -rf /tmp/*
 	
+ENV PATH /usr/share/logstash/bin:$PATH
+ENV LOGSTASH_VERSION 5.0.2
+
+
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

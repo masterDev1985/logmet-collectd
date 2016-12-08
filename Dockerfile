@@ -21,4 +21,4 @@ RUN apt-get update ; \
 	mkdir -p /usr/share/logstash/vendor/jruby/lib/jni/s390x-Linux ; \
 	cp /tmp/jffi-master/build/jni/libjffi-1.2.so  /usr/share/logstash/vendor/jruby/lib/jni/s390x-Linux ; \
 	rm -rf /tmp/* ;\
-	rm -rf /usr/share/ant
+	rm -rf /usr/share/ant/

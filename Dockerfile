@@ -14,7 +14,11 @@ RUN wget -q http://archive.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar
 RUN apt-get update ; \
 	apt-get install -y unzip gcc make ; \
 	cd /tmp ; \
-	wget https://github.com/jnr/jffi/archive/master.zip ; \
+	wget -q https://github.com/jnr/jffi/archive/master.zip ; \
 	unzip master.zip ; \
 	cd jffi-master ; \
-	/usr/share/ant/bin/ant
+	/usr/share/ant/bin/ant ; \
+	mkdir -p /usr/share/logstash/vendor/jruby/lib/jni/s390x-Linux ; \
+	cp /tmp/jffi-master/build/jni/libjffi-1.2.so  /usr/share/logstash/vendor/jruby/lib/jni/s390x-Linux ; \
+	rm -rf /tmp/* ;\
+	rm -rf /usr/share/ant

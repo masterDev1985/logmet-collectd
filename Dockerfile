@@ -12,7 +12,7 @@ RUN wget -q http://archive.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar
 	rm /tmp/ant.tar.gz
 	
 RUN apt-get update ; \
-	apt-get install -y unzip ; \
+	apt-get install -y unzip gcc make ; \
 	cd /tmp ; \
 	wget https://github.com/jnr/jffi/archive/master.zip ; \
 	unzip master.zip ; \

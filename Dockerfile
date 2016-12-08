@@ -4,7 +4,7 @@ MAINTAINER benjsmi@us.ibm.com
 # install plugin dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		apt-transport-https \
-		libzmq3 \
+		libzmq5 \
 	&& rm -rf /var/lib/apt/lists/*
 
 # the "ffi-rzmq-core" gem is very picky about where it looks for libzmq.so

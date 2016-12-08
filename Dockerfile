@@ -10,3 +10,11 @@ RUN wget -q http://archive.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar
 	mkdir -p /usr/share/ant ; \
 	tar -C /usr/share/ant --strip-components=1 -xzf /tmp/ant.tar.gz ; \
 	rm /tmp/ant.tar.gz
+	
+RUN apt-get update ; \
+	apt-get install -y unzip ; \
+	cd /tmp ; \
+	wget https://github.com/jnr/jffi/archive/master.zip ; \
+	unzip master.zip ; \
+	cd jffi-master ; \
+	/usr/share/ant/bin/ant

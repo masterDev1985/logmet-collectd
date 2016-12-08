@@ -25,7 +25,8 @@ RUN mkdir -p /usr/local/lib \
 
 # https://www.elastic.co/guide/en/logstash/5.0/installing-logstash.html#_apt
 # https://artifacts.elastic.co/GPG-KEY-elasticsearch
-RUN apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-keys 46095ACC8548582C1A2699A9D27D666CD88E42B4
+# RUN apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-keys 46095ACC8548582C1A2699A9D27D666CD88E42B4
+RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
 RUN echo 'deb %%LOGSTASH_DEB_REPO%% stable main' > /etc/apt/sources.list.d/logstash.list
 

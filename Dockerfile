@@ -1,11 +1,9 @@
-FROM openjdk:8
+FROM ubuntu
 MAINTAINER benjsmi@us.ibm.com
 
-COPY ./logstash-mtlumberjack.tgz /opt/
+RUN apt-get update ; apt-get install -y wget ; \ 
+	wget -O - https://downloads.opvis.bluemix.net:5443/client/IBM_Logmet_repo_install.sh | bash
 
-RUN cd /opt ; tar xvzf logstash-mtlumberjack.tgz ; mkdir -p /opt/logstash/conf.d
-
-COPY ./logstash.conf /opt/logstash/conf.d/
 
 ENV PATH /opt/logstash/bin:$PATH
 

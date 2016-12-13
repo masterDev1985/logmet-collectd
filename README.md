@@ -1,10 +1,10 @@
 # logmet-logstash
 
-Repository to contain a Dockerfile to build a docker image for Logmet's Logstash.
+Repository to contain a Dockerfile to build a docker image for Logmet's collectd.
 
-Logmet releases a logstash distribution that has a built-in Lumberjack plugin that goes and
-sends your logs to Logmet's servers.
+Logmet releases a collectd distribution that has a built-in  plugin that goes and
+sends your metrics to Logmet's servers.
 
 It's an output plugin.
 
-This repo containerizes that plugin and its provided logstash to allow for testing in our world.
+This repo containerizes that plugin and its provided collectd to allow for testing in our world.

@@ -8,4 +8,4 @@ RUN apt-get update ; apt-get install -y wget ; \
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["-f", ""]
+CMD ["collectd", "-f"]
